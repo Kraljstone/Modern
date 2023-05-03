@@ -1,0 +1,100 @@
+.loginBgImage {
+  height: 100%;
+  width: 100%;
+  background: url(../../../assets/bg-2.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+
+  .card {
+    width: 30%;
+    height: 600px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+
+    .cardHeader {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .centered-line {
+      display: inline-block;
+      position: relative;
+      margin: 32px auto;
+      padding: 0 10px;
+      line-height: 1.5em;
+      color: #6b6f82;
+    }
+
+    .centered-line:before,
+    .centered-line:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      border-top: 1px solid #dadada;
+      width: 100%;
+    }
+
+    .centered-line:before {
+      right: 100%;
+    }
+
+    .centered-line:after {
+      left: 100%;
+    }
+
+    .socialMedia {
+      display: flex;
+      justify-content: center;
+      & fa-icon {
+        font-size: 24px;
+        padding: 8px 10px;
+        border: 1px solid;
+        margin: 0 6px;
+        border-radius: 4px;
+      }
+
+      .twitter {
+        color: #1da1f2;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .facebook {
+        color: #4267b2;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .google {
+        color: #db4437;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .github {
+        color: #000000;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cardContent {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
