@@ -8,12 +8,12 @@ import { LoggingService } from './Services/logging.service';
   providers: [LoggingService],
 })
 export class AppComponent {
-  isLogged = true;
+  isLogged:boolean = true;
 
   constructor(private loggingService: LoggingService) {}
 
-  ngOnInit() {
-    this.loggingService.isLogged.subscribe((isLogged) => {
+  ngOnInit():void {
+    this.loggingService.isLogged.subscribe((isLogged:boolean) => {
       this.isLogged = isLogged;
     });
   }
