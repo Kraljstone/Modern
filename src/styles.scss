@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
 
 html,
 body {
@@ -10,6 +10,21 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   background-color: white !important;
+}
+
+.mat-mdc-menu-content {
+  background-color: #fc6c6c !important;
+  width: 200px;
+}
+
+.mdc-list-item__primary-text {
+  color: white !important;
+  font-weight: bold !important;
 }

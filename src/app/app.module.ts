@@ -10,9 +10,52 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginFormComponent } from './Components/login-form/login-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { SalesComponent } from './Pages/Dashboard/Sales/sales.component';
+import { ECommerceComponent } from './Pages/Dashboard/E-commerce/e-commerce.component';
+import { TodoComponent } from './Pages/Todo/todo.component';
+import { ContactComponent } from './Pages/Contact/contact.component';
+import { EmailComponent } from './Pages/Email/email.component';
+import { ChatComponent } from './Pages/Chat/chat.component';
+import { BasicComponent } from './Pages/Calendars/basic/basic.component';
+import { EventsComponent } from './Pages/Calendars/events/events.component';
+import { NewsComponent } from './Pages/News/news.component';
+import { SocialComponent } from './Pages/Social/social.component';
+import { SummaryComponent } from './Pages/Invoice/Summary/summary.component';
+import { TemplateComponent } from './Pages/Invoice/Template/template.component';
+import { ProfileComponent } from './Pages/User/Profile/profile.component';
+import { CardsComponent } from './Pages/User/Cards/cards.component';
+import { GridComponent } from './Pages/Gallery/Grid/grid.component';
+import { MasonryComponent } from './Pages/Gallery/Masonry/masonry.component';
+import { KanBanComponent } from './Pages/Kan-Ban/kan-ban.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, LoginFormComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    LoginFormComponent,
+    NavbarComponent,
+    SalesComponent,
+    ECommerceComponent,
+    TodoComponent,
+    ContactComponent,
+    EmailComponent,
+    ChatComponent,
+    BasicComponent,
+    EventsComponent,
+    NewsComponent,
+    SocialComponent,
+    SummaryComponent,
+    TemplateComponent,
+    ProfileComponent,
+    CardsComponent,
+    GridComponent,
+    MasonryComponent,
+    KanBanComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +64,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

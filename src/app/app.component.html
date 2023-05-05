@@ -1,1 +1,7 @@
-<app-login *ngIf="isLogged"></app-login>
+<app-login *ngIf="!isLogged"></app-login>
+<div class="loggedIn" *ngIf="isLogged">
+  <div class="navbar">
+    <app-navbar></app-navbar>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,103 @@
+<nav class="navbar">
+  <div class="navbar-sections">
+    <img src="../../../assets/logo-dark.png" alt="logo" />
+    <div>
+      <button
+        class="nav-button"
+        mat-raised-button
+        color="warn"
+        [matMenuTriggerFor]="dashboard"
+      >
+        Dashboard
+      </button>
+      <mat-menu #dashboard="matMenu">
+        <button routerLink="/dashboard/sales" mat-menu-item>
+          <a>Sales</a>
+        </button>
+        <button routerLink="/dashboard/e-commerce" mat-menu-item>
+          <a>E-commerce</a>
+        </button>
+      </mat-menu>
+      <h3 class="nav-section-title">apps</h3>
+      <a routerLink="/todo" class="nav-section-links" href="">To do</a>
+      <a routerLink="/contact" class="nav-section-links" href="">Contact</a>
+      <a routerLink="/email" class="nav-section-links" href=""
+        >Email Application
+      </a>
+      <a routerLink="/chat" class="nav-section-links" href=""
+        >Chat Application</a
+      >
+      <div class="nav-section-links">
+        <button
+          class="nav-button"
+          mat-raised-button
+          color="warn"
+          [matMenuTriggerFor]="events"
+        >
+          Calendars
+        </button>
+        <mat-menu #events="matMenu">
+          <button routerLink="/calendars/basic" mat-menu-item>Basic</button>
+          <button routerLink="/calendars/events" mat-menu-item>
+            <a>Events</a>
+          </button>
+        </mat-menu>
+      </div>
+
+      <a routerLink="/kan-ban" class="nav-section-links">KanBan</a>
+    </div>
+    <div>
+      <h3 class="nav-section-title">pages</h3>
+      <a routerLink="/feed" class="nav-section-links" href="">News Feed</a>
+      <a routerLink="/social" class="nav-section-links" href="">Social Feed</a>
+      <div class="nav-section-links">
+        <button
+          class="nav-button"
+          mat-raised-button
+          color="warn"
+          [matMenuTriggerFor]="invoice"
+        >
+          Invoice
+        </button>
+        <mat-menu #invoice="matMenu">
+          <button routerLink="/invoice/summary" mat-menu-item>
+            Invoice Summary
+          </button>
+          <button routerLink="/invoice/template" mat-menu-item>
+            Invoice Template
+          </button>
+        </mat-menu>
+      </div>
+      <div class="nav-section-links">
+        <button
+          class="nav-button"
+          mat-raised-button
+          color="warn"
+          [matMenuTriggerFor]="user"
+        >
+          User
+        </button>
+        <mat-menu #user="matMenu">
+          <button routerLink="/user/profile" mat-menu-item>User Profile</button>
+          <button routerLink="/user/cards" mat-menu-item>User Cards</button>
+        </mat-menu>
+      </div>
+      <div class="nav-section-links">
+        <button
+          class="nav-button"
+          mat-raised-button
+          color="warn"
+          [matMenuTriggerFor]="gallery"
+        >
+          Gallery
+        </button>
+        <mat-menu #gallery="matMenu">
+          <button routerLink="/gallery/grid" mat-menu-item>Gallery Grid</button>
+          <button routerLink="/gallery/masonry" mat-menu-item>
+            Masonry Gallery
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</nav>
