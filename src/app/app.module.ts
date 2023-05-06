@@ -34,6 +34,7 @@ import { KanBanComponent } from './Pages/Kan-Ban/kan-ban.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { LineChartComponent } from './Components/line-chart/line-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MasonryComponent,
     KanBanComponent,
     LineChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,

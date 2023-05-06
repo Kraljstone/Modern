@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Color } from '@swimlane/ngx-charts';
 import { chartData } from 'src/Data/chartData';
 
 @Component({
