@@ -1,1 +1,20 @@
-<p>sales works!</p>
+<mat-grid-list class="grid" cols="4" rowHeight="160px" gutterSize="32px">
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'white'">
+    <app-line-chart></app-line-chart>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'white'">
+    Two
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'white'">
+    Three
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background]="'white'">
+    Four
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="3" [style.background]="'white'">
+    Five
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background]="'white'">
+    Six
+  </mat-grid-tile>
+</mat-grid-list>

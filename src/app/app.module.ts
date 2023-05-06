@@ -31,6 +31,9 @@ import { CardsComponent } from './Pages/User/Cards/cards.component';
 import { GridComponent } from './Pages/Gallery/Grid/grid.component';
 import { MasonryComponent } from './Pages/Gallery/Masonry/masonry.component';
 import { KanBanComponent } from './Pages/Kan-Ban/kan-ban.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { LineChartComponent } from './Components/line-chart/line-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,7 @@ import { KanBanComponent } from './Pages/Kan-Ban/kan-ban.component';
     GridComponent,
     MasonryComponent,
     KanBanComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,8 @@ import { KanBanComponent } from './Pages/Kan-Ban/kan-ban.component';
     MatSelectModule,
     MatMenuModule,
     MatButtonModule,
+    MatGridListModule,
+    NgxChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
