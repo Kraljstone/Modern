@@ -35,6 +35,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { LineChartComponent } from './Components/line-chart/line-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
+import { SalesEmailComponent } from './Components/sales-email/sales-email.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
     KanBanComponent,
     LineChartComponent,
     PieChartComponent,
+    SalesEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
     MatButtonModule,
     MatGridListModule,
     NgxChartsModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

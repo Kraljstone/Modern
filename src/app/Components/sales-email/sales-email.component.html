@@ -1,0 +1,29 @@
+<div class="email-container">
+  <h2>Email</h2>
+  <div class="email-items">
+    <div>
+      <div class="email-heading-wrapper">
+        <h3>Open rate</h3>
+        <p class="progress">{{ rateValue }} %</p>
+      </div>
+      <mat-progress-bar
+        [color]="rate"
+        mode="determinate"
+        [value]="rateValue"
+      ></mat-progress-bar>
+    </div>
+    <div>
+      <div>
+        <div class="email-heading-wrapper">
+          <h3>Sent</h3>
+          <p class="progress">{{ sentValue }} %</p>
+        </div>
+        <mat-progress-bar
+          [color]="sent"
+          mode="determinate"
+          [value]="sentValue"
+        ></mat-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

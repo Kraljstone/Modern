@@ -13,6 +13,6 @@ export class LineChartComponent {
 
   constructor() {
     this.data = chartData;
-    this.view = [940, 700];
+    this.view = [1050, 700];
   }
 }

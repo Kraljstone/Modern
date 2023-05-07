@@ -14,11 +14,11 @@ export class PieChartComponent {
 
   showLabels: boolean = true;
 
-  gradient: boolean = false;
+  gradient: boolean = true;
   isDoughnut: boolean = true;
 
-  colorScheme = {
-    domain: ['#704FC4', '#4B852C', '#B67A3D', '#5B6FC8', '#25706F'],
+  colorScheme: any = {
+    domain: ['#755a7a', '#201073', '#0d7cf1', '#e9c848', '#dc0641'],
   };
 
   constructor() {
