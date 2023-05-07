@@ -7,7 +7,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Courier New", Courier, monospace;
   background-color: #f4f4f4;
   overflow: hidden;
 }
@@ -33,4 +33,10 @@ a {
 
 .pie-label {
   font-size: 14px !important;
+}
+
+.salesCardHeading {
+  padding-top: 32px;
+  font-size: 24px;
+  margin-left: 48px;
 }
