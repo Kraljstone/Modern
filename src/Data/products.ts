@@ -180,7 +180,7 @@ export var bubbleData = [
     ],
   },
   {
-    name: 'laptop',
+    name: 'LAPTOPS',
     series: [
       {
         name: 'January',

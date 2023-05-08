@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SalesComponent } from './Pages/Dashboard/Sales/sales.component';
-import { ECommerceComponent } from './Pages/Dashboard/E-commerce/e-commerce.component';
 import { TodoComponent } from './Pages/Todo/todo.component';
 import { ContactComponent } from './Pages/Contact/contact.component';
 import { EmailComponent } from './Pages/Email/email.component';
@@ -20,7 +19,6 @@ import { MasonryComponent } from './Pages/Gallery/Masonry/masonry.component';
 
 const routes: Routes = [
   { path: 'dashboard/sales', component: SalesComponent },
-  { path: 'dashboard/e-commerce', component: ECommerceComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'email', component: EmailComponent },

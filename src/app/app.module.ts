@@ -15,7 +15,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { SalesComponent } from './Pages/Dashboard/Sales/sales.component';
-import { ECommerceComponent } from './Pages/Dashboard/E-commerce/e-commerce.component';
 import { TodoComponent } from './Pages/Todo/todo.component';
 import { ContactComponent } from './Pages/Contact/contact.component';
 import { EmailComponent } from './Pages/Email/email.component';
@@ -37,6 +36,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './Components/pie-chart/pie-chart.component';
 import { SalesEmailComponent } from './Components/sales-email/sales-email.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BubbleChartComponent } from './Components/bubble-chart/bubble-chart.component';
+import { RecentSalesComponent } from './Components/recent-sales/recent-sales.component';
+import { HttpClientModule } from '@angular/common/http';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     LoginFormComponent,
     NavbarComponent,
     SalesComponent,
-    ECommerceComponent,
     TodoComponent,
     ContactComponent,
     EmailComponent,
@@ -64,6 +66,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     LineChartComponent,
     PieChartComponent,
     SalesEmailComponent,
+    BubbleChartComponent,
+    RecentSalesComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatGridListModule,
     NgxChartsModule,
     MatProgressBarModule,
+    HttpClientModule,
+    provideDatabase(() => getDatabase()),
   ],
   providers: [],
   bootstrap: [AppComponent],

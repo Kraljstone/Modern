@@ -8,11 +8,11 @@ import { chartData } from 'src/Data/chartData';
 })
 export class LineChartComponent {
   data: object[];
-  view: any;
+  view: [number,number];
   colorScheme: any;
 
   constructor() {
     this.data = chartData;
-    this.view = [1050, 700];
+    this.view = [1100, 700];
   }
 }

@@ -25,18 +25,18 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   providers: [{ provide: ErrorStateMatcher, useClass: MyErrorStateMatcher }],
 })
 export class LoginFormComponent {
-  emailFormControl:FormControl = new FormControl('', [
+  emailFormControl: FormControl = new FormControl('', [
     Validators?.required,
     Validators?.email,
   ]);
-  passwordFormControl:FormControl = new FormControl('', [
+  passwordFormControl: FormControl = new FormControl('', [
     Validators?.required,
     Validators?.pattern(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
     ),
   ]);
 
-  matcher:MyErrorStateMatcher = new MyErrorStateMatcher();
+  matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
   constructor(private loggingService: LoggingService) {}
 

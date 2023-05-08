@@ -1,0 +1,31 @@
+<div>
+  <h3 class="heading">Recent Sales</h3>
+  <div>
+    <div class="container">
+      <div>
+        <p class="title">Products</p>
+        <div class="item" *ngFor="let product of products">
+          {{ product?.title }}
+        </div>
+      </div>
+      <div>
+        <p class="title">Rating</p>
+        <div class="item" *ngFor="let rate of products">
+          {{ rate?.rating?.rate }}
+        </div>
+      </div>
+      <div>
+        <p class="title">Rating Count</p>
+        <div class="item" *ngFor="let count of products">
+          {{ count?.rating?.count }}
+        </div>
+      </div>
+      <div>
+        <p class="title">Price</p>
+        <div class="item" *ngFor="let price of products">
+          {{ price?.price }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
