@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  padding-top: 48px;
+  position: relative;
+  height: 100%;
+
+  .side-menu {
+    width: 300px;
+
+    .btn {
+      width: 250px;
+      margin-top: 8px;
+    }
+  }
+
+  .todo {
+    background-color: #fff;
+    padding: 16px 8px;
+    border-radius: 6px;
+    border: 1px solid black;
+    margin-bottom: 16px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    margin-left: -32px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -60%);
+    height: 500px;
+    width: 1000px;
+
+    .card {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+
+      .task-heading {
+        font-size: 32px;
+      }
+    }
+  }
+}
+.example-form {
+  width: 45vw;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+textarea {
+  min-height: 150px;
+}

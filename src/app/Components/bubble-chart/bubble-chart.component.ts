@@ -8,8 +8,7 @@ import { bubbleData } from 'src/Data/products';
 })
 export class BubbleChartComponent {
   bubbleData: any;
-  view: [number,number] = [1000, 540];
-
+  view: [number, number] = [1000, 540];
   // options
   showXAxis: boolean = true;
   showYAxis: boolean = true;
@@ -24,14 +23,13 @@ export class BubbleChartComponent {
   yScaleMin: number = 70;
   yScaleMax: number = 85;
 
-  colorScheme:any = {
+  colorScheme: any = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
   };
 
   constructor() {
     Object.assign(this, { bubbleData });
   }
-
 
   ngOnInit(): void {}
 }

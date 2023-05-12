@@ -1,0 +1,17 @@
+.container {
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & h2 {
+    font-size: 48px;
+    padding-bottom: 24px;
+  }
+
+  & p {
+    font-size: 36px;
+  }
+}

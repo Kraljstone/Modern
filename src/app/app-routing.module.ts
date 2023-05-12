@@ -16,8 +16,10 @@ import { CardsComponent } from './Pages/User/Cards/cards.component';
 import { ProfileComponent } from './Pages/User/Profile/profile.component';
 import { GridComponent } from './Pages/Gallery/Grid/grid.component';
 import { MasonryComponent } from './Pages/Gallery/Masonry/masonry.component';
+import { NotFoundComponent } from './Pages/Not-found/not-found.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'dashboard/sales', pathMatch: 'full' },
   { path: 'dashboard/sales', component: SalesComponent },
   { path: 'todo', component: TodoComponent },
   { path: 'contact', component: ContactComponent },
@@ -34,6 +36,7 @@ const routes: Routes = [
   { path: 'social', component: SocialComponent },
   { path: 'gallery/grid', component: GridComponent },
   { path: 'gallery/masonry', component: MasonryComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

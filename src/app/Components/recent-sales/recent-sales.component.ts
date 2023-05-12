@@ -13,8 +13,15 @@ export class RecentSalesComponent {
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
-    this.data.getProducts().subscribe((data) => {
-      this.products = data;
+    this.data.getProducts('https://fakestoreapi.com/products').subscribe({
+      next: (data) => {
+        // Success callback
+        this.products = data;
+      },
+      error: (error) => {
+        // Error callback
+        console.error('An error occurred:', error);
+      },
     });
   }
 }

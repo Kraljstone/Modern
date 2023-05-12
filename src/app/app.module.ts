@@ -39,7 +39,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BubbleChartComponent } from './Components/bubble-chart/bubble-chart.component';
 import { RecentSalesComponent } from './Components/recent-sales/recent-sales.component';
 import { HttpClientModule } from '@angular/common/http';
-import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
     NgxChartsModule,
     MatProgressBarModule,
     HttpClientModule,
-    provideDatabase(() => getDatabase()),
+    MatAutocompleteModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

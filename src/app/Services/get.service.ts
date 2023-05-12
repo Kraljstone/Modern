@@ -5,11 +5,9 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class DataService {
-  private products = 'https://fakestoreapi.com/products';
-
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<any> {
-    return this.http.get<any>(this.products);
+  getProducts(data: string): Observable<any> {
+    return this.http.get<any>(data);
   }
 }
