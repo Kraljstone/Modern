@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { DataService } from 'src/app/Services/get.service';
+import { ToDo } from './todo.model';
 export interface User {
   name: string;
 }
@@ -16,7 +19,9 @@ export class TodoComponent {
   filteredOptions: Observable<User[]> = new Observable<User[]>();
   isOpen = false;
   textareaValue: string = '';
-  createdToDos: string[] = [];
+  createdToDos: ToDo[] = [];
+
+  constructor(private http: HttpClient, private data: DataService) {}
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -26,6 +31,7 @@ export class TodoComponent {
         return name ? this._filter(name as string) : this.options.slice();
       })
     );
+    this.getData();
   }
 
   displayFn(user: User): string {
@@ -48,7 +54,47 @@ export class TodoComponent {
     this.isOpen = false;
   }
 
-  onCreate() {
-    this.createdToDos.push(this.textareaValue);
+  getData() {
+    this.data
+      .get(
+        'https://modern-2b7c0-default-rtdb.europe-west1.firebasedatabase.app/todos.json'
+      )
+      .pipe(
+        map((responseData: { [key: string]: ToDo }) => {
+          const toDos: ToDo[] = [];
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              toDos.push({ ...responseData[key], id: key });
+            }
+          }
+
+          return toDos;
+        })
+      )
+      .subscribe({
+        next: (toDos) => {
+          // Success callback
+          this.createdToDos = toDos;
+        },
+        error: (error) => {
+          // Error callback
+          console.error('An error occurred:', error);
+        },
+      });
   }
+
+  onCreate() {
+    this.http
+      .post(
+        'https://modern-2b7c0-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
+        {
+          todo: this.textareaValue,
+        }
+      )
+      .subscribe(() => {
+        this.getData();
+      });
+  }
+
+
 }

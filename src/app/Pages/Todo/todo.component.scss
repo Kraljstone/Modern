@@ -21,6 +21,19 @@
     margin-bottom: 16px;
   }
 
+  .noTodo {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .spinner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .overlay {
     position: absolute;
     top: 0;

@@ -41,6 +41,8 @@ import { RecentSalesComponent } from './Components/recent-sales/recent-sales.com
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule } from '@angular/forms';
+import { DataService } from './Services/get.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -87,8 +89,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatAutocompleteModule,
     FormsModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

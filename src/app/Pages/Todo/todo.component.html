@@ -24,9 +24,16 @@
         </mat-autocomplete>
       </mat-form-field>
     </form>
-    <div class="todo" *ngFor="let createdToDo of createdToDos">
-      {{ createdToDo }}
-    </div>
+    <ng-container *ngIf="createdToDos.length === 0">
+      <div class="noTodo" *ngFor="let createdToDo of createdToDos">
+        No todo's created
+      </div>
+    </ng-container>
+    <ng-container *ngIf="createdToDos.length !== 0">
+      <div class="todo" *ngFor="let createdToDo of createdToDos">
+        {{ createdToDo.todo }}
+      </div>
+    </ng-container>
     <div *ngIf="isOpen" (click)="closeModal()" class="overlay"></div>
     <div *ngIf="isOpen" class="modal">
       <mat-card class="card">

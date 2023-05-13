@@ -5,7 +5,6 @@ import { DataService } from 'src/app/Services/get.service';
   selector: 'app-recent-sales',
   templateUrl: './recent-sales.component.html',
   styleUrls: ['./recent-sales.component.scss'],
-  providers: [DataService],
 })
 export class RecentSalesComponent {
   products: any[] = [];
@@ -13,7 +12,7 @@ export class RecentSalesComponent {
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
-    this.data.getProducts('https://fakestoreapi.com/products').subscribe({
+    this.data.get('https://fakestoreapi.com/products').subscribe({
       next: (data) => {
         // Success callback
         this.products = data;
