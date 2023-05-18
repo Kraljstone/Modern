@@ -5,25 +5,7 @@
     </button>
   </div>
   <div>
-    <form class="example-form">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Search</mat-label>
-        <input
-          type="text"
-          matInput
-          [formControl]="myControl"
-          [matAutocomplete]="auto"
-        />
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-          <mat-option
-            *ngFor="let option of filteredOptions | async"
-            [value]="option"
-          >
-            {{ option.name }}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-    </form>
+    <form class="example-form"></form>
     <ng-container *ngIf="createdToDos.length === 0">
       <div class="noTodo" *ngFor="let createdToDo of createdToDos">
         No todo's created
@@ -31,11 +13,16 @@
     </ng-container>
     <ng-container *ngIf="createdToDos.length !== 0">
       <div class="todo" *ngFor="let createdToDo of createdToDos">
-        {{ createdToDo.todo }}
+        <div>{{ createdToDo.todo }}</div>
+        <fa-icon
+          (click)="removeToDO(createdToDo.id)"
+          class="xIcon"
+          [icon]="faX"
+        ></fa-icon>
       </div>
     </ng-container>
     <div *ngIf="isOpen" (click)="closeModal()" class="overlay"></div>
-    <div *ngIf="isOpen" class="modal">
+    <div *ngIf="isOpen" class="taskModal">
       <mat-card class="card">
         <mat-card-content class="task-heading">New Task</mat-card-content>
         <textarea [(ngModel)]="textareaValue" matInput></textarea>

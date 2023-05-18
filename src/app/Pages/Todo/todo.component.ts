@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, startWith } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from 'src/app/Services/get.service';
 import { ToDo } from './todo.model';
+import { faX } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+
 export interface User {
   name: string;
 }
@@ -15,46 +18,26 @@ export interface User {
 })
 export class TodoComponent {
   myControl = new FormControl<string | User>('');
-  options: User[] = [{ name: 'Mary' }, { name: 'Shelley' }, { name: 'Igor' }];
-  filteredOptions: Observable<User[]> = new Observable<User[]>();
   isOpen = false;
   textareaValue: string = '';
   createdToDos: ToDo[] = [];
+  faX: IconDefinition = faX;
 
   constructor(private http: HttpClient, private data: DataService) {}
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => {
-        const name = typeof value === 'string' ? value : value?.name;
-        return name ? this._filter(name as string) : this.options.slice();
-      })
-    );
     this.getData();
   }
 
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
+  openModal(): boolean {
+    return (this.isOpen = true);
   }
 
-  private _filter(name: string): User[] {
-    const filterValue = name.toLowerCase();
-
-    return this.options.filter((option) =>
-      option.name.toLowerCase().includes(filterValue)
-    );
+  closeModal(): boolean {
+    return (this.isOpen = false);
   }
 
-  openModal() {
-    this.isOpen = true;
-  }
-
-  closeModal() {
-    this.isOpen = false;
-  }
-
-  getData() {
+  getData(): void {
     this.data
       .get(
         'https://modern-2b7c0-default-rtdb.europe-west1.firebasedatabase.app/todos.json'
@@ -67,8 +50,10 @@ export class TodoComponent {
               toDos.push({ ...responseData[key], id: key });
             }
           }
-
           return toDos;
+        }),
+        catchError((error: Error) => {
+          return throwError(() => new Error('An error occurred:', error));
         })
       )
       .subscribe({
@@ -76,14 +61,14 @@ export class TodoComponent {
           // Success callback
           this.createdToDos = toDos;
         },
-        error: (error) => {
+        error: (error: Error) => {
           // Error callback
-          console.error('An error occurred:', error);
+          return throwError(() => new Error('An error occurred:', error));
         },
       });
   }
 
-  onCreate() {
+  onCreate(): void {
     this.http
       .post(
         'https://modern-2b7c0-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
@@ -96,5 +81,18 @@ export class TodoComponent {
       });
   }
 
+  removeToDO(id?: string): void {
+    const url: string = `https://modern-2b7c0-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`;
 
+    this.http.delete(url).subscribe({
+      next: () => {
+        // Success callback
+        this.getData();
+      },
+      error: (error: Error) => {
+        // Error callback
+        console.error('An error occurred while deleting the item:', error);
+      },
+    });
+  }
 }
